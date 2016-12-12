@@ -1,0 +1,19 @@
+platform :ios, '8.0'
+workspace 'Demo-iOS.xcworkspace'
+
+# 自己整合的第三方类库
+pod 'ThirdParty', :git => 'https://github.com/mrhuangyuhui/repo-third-party-ios.git'
+
+# 其他第三方类库
+pod 'Masonry', :git => 'https://github.com/cloudkite/Masonry.git'
+pod 'BlocksKit', :git => 'https://github.com/zwaldowski/BlocksKit.git'
+pod 'KSDeferred', :git => 'https://github.com/kseebaldt/deferred.git'
+pod 'Objection', :git => 'https://github.com/atomicobject/objection.git'
+
+target "Demo-iOS" do
+  project "Demo-iOS/Demo-iOS.xcodeproj"
+end
+
+target "QuartzCode" do
+  project "QuartzCode/QuartzCode.xcodeproj"
+end

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:GCD/GCD.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Timer/Timer.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:RunLoop/RunLoop.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Animation/Animation.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Runtime/Runtime.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Demo-iOS/Demo-iOS.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:QuartzCode/QuartzCode.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+</Workspace>

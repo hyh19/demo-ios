@@ -1,0 +1,21 @@
+{
+  "name": "ThirdParty",
+  "version": "0.0.1",
+  "summary": "第三方类库",
+  "homepage": "https://github.com/mrhuangyuhui/repo-third-party-ios",
+  "license": "MIT",
+  "authors": {
+    "Yuhui Huang": "mrhuangyuhui@gmail.com"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source": {
+    "git": "https://github.com/mrhuangyuhui/repo-third-party-ios.git",
+    "tag": "0.0.1"
+  },
+  "source_files": [
+    "Classes",
+    "Classes/**/*.{h,m}"
+  ]
+}

@@ -1,0 +1,14 @@
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+//define this constant if you want to use Masonry without the 'mas_' prefix
+#define MAS_SHORTHAND
+//define this constant if you want to enable auto-boxing for default syntax
+#define MAS_SHORTHAND_GLOBALS
+#import "Masonry.h"
+
+#import <KSDeferred/KSDeferred.h>
+
+#import <Objection/Objection.h>
+
+#endif /* PrefixHeader_pch */

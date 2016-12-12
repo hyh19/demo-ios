@@ -1,0 +1,456 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CA3229501DA0F0FE008D0E05 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CA32294F1DA0F0FE008D0E05 /* main.m */; };
+		CA3229531DA0F0FE008D0E05 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3229521DA0F0FE008D0E05 /* AppDelegate.m */; };
+		CA3229561DA0F0FE008D0E05 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3229551DA0F0FE008D0E05 /* ViewController.m */; };
+		CA3229591DA0F0FE008D0E05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA3229571DA0F0FE008D0E05 /* Main.storyboard */; };
+		CA32295B1DA0F0FE008D0E05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA32295A1DA0F0FE008D0E05 /* Assets.xcassets */; };
+		CA32295E1DA0F0FE008D0E05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA32295C1DA0F0FE008D0E05 /* LaunchScreen.storyboard */; };
+		CA32296E1DA1001A008D0E05 /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA32296B1DA1001A008D0E05 /* CustomView.m */; };
+		CA32296F1DA1001A008D0E05 /* QCMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = CA32296D1DA1001A008D0E05 /* QCMethod.m */; };
+		DD8A0BD45F31308475F605CF /* libPods-QuartzCode.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF29A7CE939D069BB3D9062B /* libPods-QuartzCode.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6C796F640EB35E4A6E795DC0 /* Pods-QuartzCode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuartzCode.release.xcconfig"; path = "../Pods/Target Support Files/Pods-QuartzCode/Pods-QuartzCode.release.xcconfig"; sourceTree = "<group>"; };
+		9019EE78ADD980D64BC04D25 /* Pods-QuartzCode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuartzCode.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-QuartzCode/Pods-QuartzCode.debug.xcconfig"; sourceTree = "<group>"; };
+		CA32294B1DA0F0FE008D0E05 /* QuartzCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuartzCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA32294F1DA0F0FE008D0E05 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CA3229511DA0F0FE008D0E05 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CA3229521DA0F0FE008D0E05 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CA3229541DA0F0FE008D0E05 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		CA3229551DA0F0FE008D0E05 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		CA3229581DA0F0FE008D0E05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CA32295A1DA0F0FE008D0E05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CA32295D1DA0F0FE008D0E05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CA32295F1DA0F0FE008D0E05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA3229691DA0FDA7008D0E05 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		CA32296A1DA1001A008D0E05 /* CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomView.h; sourceTree = "<group>"; };
+		CA32296B1DA1001A008D0E05 /* CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomView.m; sourceTree = "<group>"; };
+		CA32296C1DA1001A008D0E05 /* QCMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCMethod.h; sourceTree = "<group>"; };
+		CA32296D1DA1001A008D0E05 /* QCMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCMethod.m; sourceTree = "<group>"; };
+		FF29A7CE939D069BB3D9062B /* libPods-QuartzCode.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QuartzCode.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CA3229481DA0F0FE008D0E05 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD8A0BD45F31308475F605CF /* libPods-QuartzCode.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		69070C2FECB79F780007619D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9019EE78ADD980D64BC04D25 /* Pods-QuartzCode.debug.xcconfig */,
+				6C796F640EB35E4A6E795DC0 /* Pods-QuartzCode.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CA3229421DA0F0FE008D0E05 = {
+			isa = PBXGroup;
+			children = (
+				CA32294D1DA0F0FE008D0E05 /* QuartzCode */,
+				CA32294C1DA0F0FE008D0E05 /* Products */,
+				69070C2FECB79F780007619D /* Pods */,
+				F615BB35AFB8E598276EEF68 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CA32294C1DA0F0FE008D0E05 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CA32294B1DA0F0FE008D0E05 /* QuartzCode.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CA32294D1DA0F0FE008D0E05 /* QuartzCode */ = {
+			isa = PBXGroup;
+			children = (
+				CA32296A1DA1001A008D0E05 /* CustomView.h */,
+				CA32296B1DA1001A008D0E05 /* CustomView.m */,
+				CA32296C1DA1001A008D0E05 /* QCMethod.h */,
+				CA32296D1DA1001A008D0E05 /* QCMethod.m */,
+				CA3229511DA0F0FE008D0E05 /* AppDelegate.h */,
+				CA3229521DA0F0FE008D0E05 /* AppDelegate.m */,
+				CA3229541DA0F0FE008D0E05 /* ViewController.h */,
+				CA3229551DA0F0FE008D0E05 /* ViewController.m */,
+				CA3229571DA0F0FE008D0E05 /* Main.storyboard */,
+				CA32295A1DA0F0FE008D0E05 /* Assets.xcassets */,
+				CA32295C1DA0F0FE008D0E05 /* LaunchScreen.storyboard */,
+				CA32295F1DA0F0FE008D0E05 /* Info.plist */,
+				CA32294E1DA0F0FE008D0E05 /* Supporting Files */,
+			);
+			path = QuartzCode;
+			sourceTree = "<group>";
+		};
+		CA32294E1DA0F0FE008D0E05 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CA3229691DA0FDA7008D0E05 /* PrefixHeader.pch */,
+				CA32294F1DA0F0FE008D0E05 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F615BB35AFB8E598276EEF68 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FF29A7CE939D069BB3D9062B /* libPods-QuartzCode.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CA32294A1DA0F0FE008D0E05 /* QuartzCode */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA3229621DA0F0FE008D0E05 /* Build configuration list for PBXNativeTarget "QuartzCode" */;
+			buildPhases = (
+				16AEE8CC8829AD39042BAF96 /* 📦 Check Pods Manifest.lock */,
+				317AE3B9ADB72807A58AE2DB /* [CP] Check Pods Manifest.lock */,
+				CA3229471DA0F0FE008D0E05 /* Sources */,
+				CA3229481DA0F0FE008D0E05 /* Frameworks */,
+				CA3229491DA0F0FE008D0E05 /* Resources */,
+				8AADB1277E629502979872FE /* [CP] Embed Pods Frameworks */,
+				7DF237162353CB9E665F4C98 /* [CP] Copy Pods Resources */,
+				DC1D79E4657C8F525176B7E3 /* 📦 Embed Pods Frameworks */,
+				1A07C02255D5B87B4B9FA8B7 /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QuartzCode;
+			productName = QuartzCode;
+			productReference = CA32294B1DA0F0FE008D0E05 /* QuartzCode.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CA3229431DA0F0FE008D0E05 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Yuhui Huang";
+				TargetAttributes = {
+					CA32294A1DA0F0FE008D0E05 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = CA3229461DA0F0FE008D0E05 /* Build configuration list for PBXProject "QuartzCode" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CA3229421DA0F0FE008D0E05;
+			productRefGroup = CA32294C1DA0F0FE008D0E05 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CA32294A1DA0F0FE008D0E05 /* QuartzCode */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CA3229491DA0F0FE008D0E05 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA32295E1DA0F0FE008D0E05 /* LaunchScreen.storyboard in Resources */,
+				CA32295B1DA0F0FE008D0E05 /* Assets.xcassets in Resources */,
+				CA3229591DA0F0FE008D0E05 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		16AEE8CC8829AD39042BAF96 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		1A07C02255D5B87B4B9FA8B7 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-QuartzCode/Pods-QuartzCode-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		317AE3B9ADB72807A58AE2DB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7DF237162353CB9E665F4C98 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-QuartzCode/Pods-QuartzCode-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8AADB1277E629502979872FE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-QuartzCode/Pods-QuartzCode-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DC1D79E4657C8F525176B7E3 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-QuartzCode/Pods-QuartzCode-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CA3229471DA0F0FE008D0E05 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA3229561DA0F0FE008D0E05 /* ViewController.m in Sources */,
+				CA32296F1DA1001A008D0E05 /* QCMethod.m in Sources */,
+				CA32296E1DA1001A008D0E05 /* CustomView.m in Sources */,
+				CA3229531DA0F0FE008D0E05 /* AppDelegate.m in Sources */,
+				CA3229501DA0F0FE008D0E05 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CA3229571DA0F0FE008D0E05 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CA3229581DA0F0FE008D0E05 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CA32295C1DA0F0FE008D0E05 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CA32295D1DA0F0FE008D0E05 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CA3229601DA0F0FE008D0E05 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CA3229611DA0F0FE008D0E05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CA3229631DA0F0FE008D0E05 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9019EE78ADD980D64BC04D25 /* Pods-QuartzCode.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = QuartzCode/PrefixHeader.pch;
+				INFOPLIST_FILE = QuartzCode/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = YH.QuartzCode;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CA3229641DA0F0FE008D0E05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C796F640EB35E4A6E795DC0 /* Pods-QuartzCode.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = QuartzCode/PrefixHeader.pch;
+				INFOPLIST_FILE = QuartzCode/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = YH.QuartzCode;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CA3229461DA0F0FE008D0E05 /* Build configuration list for PBXProject "QuartzCode" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA3229601DA0F0FE008D0E05 /* Debug */,
+				CA3229611DA0F0FE008D0E05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA3229621DA0F0FE008D0E05 /* Build configuration list for PBXNativeTarget "QuartzCode" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA3229631DA0F0FE008D0E05 /* Debug */,
+				CA3229641DA0F0FE008D0E05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CA3229431DA0F0FE008D0E05 /* Project object */;
+}
