@@ -21,7 +21,7 @@
 ///-----------------------------------------------------------------------------
 /// http://www.jianshu.com/p/2d57c72016c6
 ///-----------------------------------------------------------------------------
-#pragma mark - http://www.jianshu.com/p/2d57c72016c6 -
+#pragma mark - 《iOS多线程——彻底学会多线程之『GCD』》 -
 
 /**
  并发队列+同步执行：不会开启新线程，执行完一个任务，再执行下一个任务。
@@ -367,7 +367,7 @@
 ///-----------------------------------------------------------------------------
 /// http://blog.csdn.net/growinggiant/article/details/41077221
 ///-----------------------------------------------------------------------------
-#pragma mark - http://blog.csdn.net/growinggiant/article/details/41077221 -
+#pragma mark - 《dispatch_set_target_queue一些理解》 -
 
 /**
  一般都是把一个任务放到一个串行的queue中，如果这个任务被拆分了，被放置到多个串行的queue中，但实际还是需要这个任务同步执行，那么就会有问题，因为多个串行queue之间是并行的。
@@ -411,7 +411,7 @@
 ///-----------------------------------------------------------------------------
 /// http://www.jianshu.com/p/a28c5bbd5b4a
 ///-----------------------------------------------------------------------------
-#pragma mark - http://www.jianshu.com/p/a28c5bbd5b4a -
+#pragma mark - 《菜鸟不要怕，看一眼，你就会用GCD，带你装逼带你飞》 -
 
 /**
  刚刚我们说了系统的Global Queue是可以指定优先级的，那我们如何给自己创建的队列执行优先级呢？
@@ -491,7 +491,7 @@
 ///-----------------------------------------------------------------------------
 /// http://www.tanhao.me/pieces/392.html
 ///-----------------------------------------------------------------------------
-#pragma mark - http://www.tanhao.me/pieces/392.html -
+#pragma mark - 《在CGD中快速实现多线程的并发控制》 -
 /**
  dispatch_semaphore_create 创建一个semaphore
  dispatch_semaphore_signal 发送一个信号
@@ -535,7 +535,7 @@
 ///-----------------------------------------------------------------------------
 /// http://www.jianshu.com/p/ae786a4cf3b1
 ///-----------------------------------------------------------------------------
-#pragma mark - http://www.jianshu.com/p/ae786a4cf3b1 -
+#pragma mark - 《iOS中GCD的使用小结》 -
 
 /**
  注意不要嵌套使用同步执行的串行队列任务
@@ -582,10 +582,10 @@
 }
 
 /**
- 这个不是很懂，要继续详细了解
+ 等待队列组内的任务全部执行完毕后继续往下执行，会阻塞当前线程。
  http://www.jianshu.com/p/ae786a4cf3b1
  */
-- (void)groupWait {
+- (void)group_wait_1 {
     
     dispatch_group_t group = dispatch_group_create();
     
@@ -615,8 +615,260 @@
     NSLog(@"---- end ---- %@", [NSThread currentThread]);
 }
 
+///-----------------------------------------------------------------------------
+/// http://www.jianshu.com/p/fbe6a654604c
+///-----------------------------------------------------------------------------
+#pragma mark - 《细说GCD（Grand Central Dispatch）如何用》 -
+
+/**
+ 自定义队列的优先级：可以通过dipatch_queue_attr_make_with_qos_class或
+ dispatch_set_target_queue方法设置队列的优先级
+ 
+ QOS_CLASS_USER_INTERACTIVE：表示任务需要被立即执行提供好的体验，用来更新UI，响应事件等。这个等级最好保持小规模。
+ QOS_CLASS_USER_INITIATED：表示任务由UI发起异步执行。适用场景是需要及时结果同时又可以继续交互的时候。
+ QOS_CLASS_UTILITY：表示需要长时间运行的任务，伴有用户可见进度指示器。经常会用来做计算，I/O，网络，持续的数据填充等任务。这个任务节能。
+ QOS_CLASS_BACKGROUND：表示用户不会察觉的任务，使用它来处理预加载，或者不需要用户交互和对时间不敏感的任务。
+ 
+ http://www.jianshu.com/p/fbe6a654604c
+ */
+- (void)qos1 {
+    // 低优先级
+    dispatch_queue_attr_t attr = dispatch_queue_attr_make_with_qos_class(DISPATCH_QUEUE_CONCURRENT, QOS_CLASS_UTILITY, -1);
+    dispatch_queue_t queue1 = dispatch_queue_create("queue1", attr);
+    dispatch_async(queue1, ^{
+        for (int i = 0; i < 100; ++i) {
+            NSLog(@"第1个代码块 %@----%d", [NSThread currentThread], i);
+        };
+    });
+    
+    // 高优先级
+    dispatch_queue_t queue2 = dispatch_queue_create("queue2", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_queue_t referQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
+    dispatch_set_target_queue(queue2, referQueue);
+    dispatch_async(queue2, ^{
+        for (int i = 0; i < 100; ++i) {
+            NSLog(@"第2个代码块 %@++++%d", [NSThread currentThread], i);
+        };
+    });
+}
+
+/**
+ 另一种指定优先级的方法
+ http://www.jianshu.com/p/fbe6a654604c
+ */
+- (void)qos2 {
+    
+    dispatch_queue_t queue1 = dispatch_get_global_queue(QOS_CLASS_UTILITY, 0);
+    dispatch_async(queue1, ^{
+        for (int i = 0; i < 100; ++i) {
+            NSLog(@"第1个代码块 %@----%d", [NSThread currentThread], i);
+        };
+    });
+    
+    dispatch_queue_t queue2 = dispatch_get_global_queue(QOS_CLASS_USER_INTERACTIVE, 0);
+    dispatch_async(queue2, ^{
+        for (int i = 0; i < 100; ++i) {
+            NSLog(@"第2个代码块 %@++++%d", [NSThread currentThread], i);
+        };
+    });
+}
+
+/**
+ 当group里所有任务都完成，GCD API有两种方式发送通知，第一种是dispatch_group_wait，会阻塞当
+ 前线程，等所有任务都完成或等待超时。第二种方法是使用dispatch_group_notify，异步执行闭包，不会阻塞。
+ 
+ http://www.jianshu.com/p/fbe6a654604c
+ */
+- (void)group_wait_2 {
+    
+    dispatch_queue_t queue = dispatch_queue_create("concurrent.queue", DISPATCH_QUEUE_CONCURRENT);
+    
+    dispatch_group_t group = dispatch_group_create();
+    
+    dispatch_group_async(group, queue, ^{
+        [NSThread sleepForTimeInterval:2.f];
+        NSLog(@"第1个代码块 ---- %@", [NSThread currentThread]);
+    });
+    
+    dispatch_group_async(group, queue, ^{
+        NSLog(@"第2个代码块 ---- %@", [NSThread currentThread]);
+    });
+    
+    dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
+    
+    NSLog(@"go on");
+}
+
+/**
+ 创建block
+ http://www.jianshu.com/p/fbe6a654604c
+ */
+- (void)block_create {
+    
+    // normal way
+    dispatch_queue_t concurrentQueue = dispatch_queue_create("concurrent.queue", DISPATCH_QUEUE_CONCURRENT);
+    
+    dispatch_block_t normalblock = dispatch_block_create(0, ^{
+        NSLog(@"run normal block");
+    });
+    dispatch_async(concurrentQueue, normalblock);
+    
+    // QOS way
+    dispatch_block_t qosBlock = dispatch_block_create_with_qos_class(0, QOS_CLASS_USER_INITIATED, -1, ^{
+        NSLog(@"run qos block");
+    });
+    dispatch_async(concurrentQueue, qosBlock);
+}
+
+/**
+ 可以根据dispatch block来设置等待时间，参数DISPATCH_TIME_FOREVER会一直等待block结束
+ http://www.jianshu.com/p/fbe6a654604c
+ */
+- (void)block_wait {
+    
+    dispatch_queue_t serialQueue = dispatch_queue_create("serial.queue", DISPATCH_QUEUE_SERIAL);
+    
+    dispatch_block_t block = dispatch_block_create(0, ^{
+        NSLog(@"star");
+        [NSThread sleepForTimeInterval:2.f];
+        NSLog(@"end");
+    });
+    
+    dispatch_async(serialQueue, block);
+    
+    dispatch_block_wait(block, DISPATCH_TIME_FOREVER);
+    
+    NSLog(@"OK, now can go on");
+}
+
+/**
+ 可以监视指定dispatch block结束，然后再加入一个block到队列中。三个参数分别为，第一个是需要监视
+ 的block，第二个参数是需要提交执行的队列，第三个是待加入到队列中的block。
+ 
+ http://www.jianshu.com/p/fbe6a654604c
+ */
+- (void)block_notify {
+    
+    dispatch_queue_t serialQueue = dispatch_queue_create("serial.queue", DISPATCH_QUEUE_SERIAL);
+    
+    dispatch_block_t firstBlock = dispatch_block_create(0, ^{
+        NSLog(@"first block start");
+        [NSThread sleepForTimeInterval:2.f];
+        NSLog(@"first block end");
+    });
+    dispatch_async(serialQueue, firstBlock);
+    
+    dispatch_block_t secondBlock = dispatch_block_create(0, ^{
+        NSLog(@"second block run");
+    });
+    // first block执行完才在serial queue中执行second block
+    dispatch_block_notify(firstBlock, serialQueue, secondBlock);
+}
+
+/**
+ iOS8后GCD支持对dispatch block的取消
+ http://www.jianshu.com/p/fbe6a654604c
+ */
+- (void)block_cancel {
+    
+    dispatch_queue_t serialQueue = dispatch_queue_create("serial.queue", DISPATCH_QUEUE_SERIAL);
+    
+    dispatch_block_t firstBlock = dispatch_block_create(0, ^{
+        NSLog(@"first block start");
+        [NSThread sleepForTimeInterval:2.f];
+        NSLog(@"first block end");
+    });
+    
+    dispatch_block_t secondBlock = dispatch_block_create(0, ^{
+        NSLog(@"second block run");
+    });
+    
+    dispatch_async(serialQueue, firstBlock);
+    dispatch_async(serialQueue, secondBlock);
+    
+    // 取消second block
+    dispatch_block_cancel(secondBlock);
+}
+
+/**
+ dispatch io读取文件的方式类似于下面的方式，多个线程去读取文件的切片数据，对于大的数据文件这样会
+ 比单线程要快很多。
+ 
+ dispatch_io_create：创建dispatch io
+ dispatch_io_set_low_water：指定切割文件大小
+ dispatch_io_read：读取切割的文件然后合并。
+ 
+ http://www.jianshu.com/p/fbe6a654604c
+ */
+- (void)dispatch_io {
+//    dispatch_async(queue,^{/*read 0-99 bytes*/});
+//    dispatch_async(queue,^{/*read 100-199 bytes*/});
+//    dispatch_async(queue,^{/*read 200-299 bytes*/});
+}
+
+/**
+ 死锁的几种例子
+ http://www.jianshu.com/p/fbe6a654604c
+ */
+- (void)deadLockCase1 {
+    NSLog(@"1");
+    //主队列的同步线程，按照FIFO的原则（先入先出），2排在3后面会等3执行完，但因为同步线程，3又要等2执行完，相互等待成为死锁。
+    dispatch_sync(dispatch_get_main_queue(), ^{
+        NSLog(@"2");
+    });
+    NSLog(@"3");
+}
+- (void)deadLockCase2 {
+    NSLog(@"1");
+    //3会等2，因为2在全局并行队列里，不需要等待3，这样2执行完回到主队列，3就开始执行
+    dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        NSLog(@"2");
+    });
+    NSLog(@"3");
+}
+- (void)deadLockCase3 {
+    dispatch_queue_t serialQueue = dispatch_queue_create("serial.queue", DISPATCH_QUEUE_SERIAL);
+    NSLog(@"1");
+    dispatch_async(serialQueue, ^{
+        NSLog(@"2");
+        //串行队列里面同步一个串行队列就会死锁
+        dispatch_sync(serialQueue, ^{
+            NSLog(@"3");
+        });
+        NSLog(@"4");
+    });
+    NSLog(@"5");
+}
+- (void)deadLockCase4 {
+    NSLog(@"1");
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSLog(@"2");
+        //将同步的串行队列放到另外一个线程就能够解决
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            NSLog(@"3");
+        });
+        NSLog(@"4");
+    });
+    NSLog(@"5");
+}
+- (void)deadLockCase5 {
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSLog(@"1");
+        //回到主线程发现死循环后面就没法执行了
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            NSLog(@"2");
+        });
+        NSLog(@"3");
+    });
+    NSLog(@"4");
+    //死循环
+    while (1) {
+        //
+    }
+}
+
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self groupWait];
+    [self block_cancel];
 }
 
 @end
