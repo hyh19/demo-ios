@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:NSOperation/NSOperation.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:GCD/GCD.xcodeproj">
    </FileRef>
    <FileRef
