@@ -11,13 +11,14 @@
 
 @interface ViewController ()
 
+@property (nonatomic, strong) NSOperationQueue *queue;
+
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
 }
 
 ///-----------------------------------------------------------------------------
@@ -268,8 +269,99 @@
     [queue addOperation:op2];
 }
 
+///-----------------------------------------------------------------------------
+/// http://www.jianshu.com/p/09e90f8d9bdc
+///-----------------------------------------------------------------------------
+#pragma mark - 《iOS多线程：多线程实现之NSOperation》 -
+
+/**
+ 队列的暂停、恢复、取消、最大并发数
+ http://www.jianshu.com/p/09e90f8d9bdc
+ */
+- (void)createSuspendQueue {
+    
+    self.queue = [[NSOperationQueue alloc] init];
+    
+    // 最大并发数：最大同时执行的任务数
+    // 1.默认是-1，没有限制，由系统自己决定
+    // 2.不要设置为0，设置为0就不会执行任务了
+    // 3.设置为1，就可以达到串行的效果
+    self.queue.maxConcurrentOperationCount = 1;
+    
+    [self.queue addOperationWithBlock:^{
+        NSLog(@"==============================================");
+        for (int i = 0; i < 10000; ++i){
+            NSLog(@"任务1 %d*****%@", i, [NSThread currentThread]);
+        }
+    }];
+    
+    [self.queue addOperationWithBlock:^{
+        NSLog(@"==============================================");
+        for (int i = 0; i < 10000; ++i){
+            NSLog(@"任务2 %d*****%@", i, [NSThread currentThread]);
+        }
+    }];
+    
+    [self.queue addOperationWithBlock:^{
+        NSLog(@"==============================================");
+        for (int i = 0; i < 10000; ++i){
+            NSLog(@"任务3 %d*****%@", i, [NSThread currentThread]);
+        }
+    }];
+}
+
+- (void)suspendQueue {
+//    self.queue.suspended = YES;
+    [self.queue cancelAllOperations];
+}
+
+/**
+ 监听任务的完成，任务执行完毕后，在所在线程执行指定的操作
+ http://www.jianshu.com/p/09e90f8d9bdc
+ */
+- (void)setCompletetionBlock {
+    
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    
+    // 创建任务
+    NSBlockOperation *op = [NSBlockOperation blockOperationWithBlock:^{
+        for (int i = 0; i < 10000; ++i) {
+            NSLog(@"%d----%@", i, [NSThread currentThread]);
+        }
+    }];
+    
+    // 添加监听
+    [op setCompletionBlock:^{
+        NSLog(@"执行完毕----%@", [NSThread currentThread]);
+    }];
+    
+    // 把任务添加到队列中
+    [queue addOperation:op];
+}
+
+/**
+ 线程间的通信
+ http://www.jianshu.com/p/09e90f8d9bdc
+ */
+- (void)backToMainQueue {
+    
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    
+    [queue addOperationWithBlock:^{
+        // 耗时操作
+        for (int i = 0; i < 10000; ++i){
+            NSLog(@"%d----%@", i, [NSThread currentThread]);
+        }
+        
+        // 回到主线程
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            NSLog(@"回到主线程----%@", [NSThread currentThread]);
+        }];
+    }];
+}
+
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self addDependency];
+    [self backToMainQueue];
 }
 
 @end
