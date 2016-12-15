@@ -17,61 +17,106 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"方法");
-    [ViewController LogAllMethodsFromClass:[[UIGestureRecognizer alloc] init]];
-    
-    NSLog(@"属性");
-    [ViewController getAllProperties:[[UIGestureRecognizer alloc] init]];
 }
 
-///-----------------------------------------------------------------------------
-/// 获取类的方法
-///-----------------------------------------------------------------------------
-+ (void)LogAllMethodsFromClass:(id)obj
-{
-    u_int count;
-    //class_copyMethodList 获取类的所有方法列表
-    Method *mothList_f = class_copyMethodList([obj class],&count) ;
-    for (int i = 0; i < count; i++) {
-        Method temp_f = mothList_f[i];
-        // method_getImplementation  由Method得到IMP函数指针
-        IMP imp_f = method_getImplementation(temp_f);
-        
-        // method_getName由Method得到SEL
-        SEL name_f = method_getName(temp_f);
-        
-        const char * name_s = sel_getName(name_f);
-        // method_getNumberOfArguments  由Method得到参数个数
-        int arguments = method_getNumberOfArguments(temp_f);
-        // method_getTypeEncoding  由Method得到Encoding 类型
-        const char * encoding = method_getTypeEncoding(temp_f);
-        
-        NSLog(@"方法名：%@\n,参数个数：%d\n,编码方式：%@\n",[NSString stringWithUTF8String:name_s],
-              arguments,[NSString stringWithUTF8String:encoding]);
-    }
-    free(mothList_f);
+- (void)viewDidAppear:(BOOL)animated {
     
+    NSLog(@"---- viewDidAppear 位置1 ----");
+    
+    // 父类的方法被替换了
+    [super viewDidAppear:animated];
+    
+    NSLog(@"---- viewDidAppear 位置1 ----");
 }
 
+@end
+
 ///-----------------------------------------------------------------------------
-/// 获取类的属性
+/// http://tech.glowing.com/cn/method-swizzling-aop
 ///-----------------------------------------------------------------------------
-+ (NSArray *)getAllProperties:(id)obj
+#pragma mark - Method Swizzling 和 AOP 实践 -
+@implementation UIViewController (MethodSwizzling)
+
+/**
+ 一般情况下，类别里的方法会重写掉主类里相同命名的方法。如果有两个类别实现了相同命名的方法，只有一个
+ 方法会被调用。但 +load: 是个特例，当一个类被读到内存的时候， runtime 会给这个类及它的每一个类
+ 别都发送一个 +load: 消息。
+ 
+ http://tech.glowing.com/cn/method-swizzling-aop
+ */
++ (void)load
 {
-    u_int count;
-    
-    //使用class_copyPropertyList及property_getName获取类的属性列表及每个属性的名称
-    
-    objc_property_t *properties  =class_copyPropertyList([obj class], &count);
-    NSMutableArray *propertiesArray = [NSMutableArray arrayWithCapacity:count];
-    for (int i = 0; i<count; i++)
-    {
-        const char* propertyName =property_getName(properties[i]);
-        NSLog(@"属性%@\n",[NSString stringWithUTF8String: propertyName]);
-        [propertiesArray addObject: [NSString stringWithUTF8String: propertyName]];
-    }
-    free(properties);
-    return propertiesArray;
+    swizzleMethod([self class], @selector(viewDidAppear:), @selector(swizzled_viewDidAppear:));
 }
+
+/**
+ 代码看起来可能有点奇怪，像递归不是么。当然不会是递归，因为在 runtime 的时候，函数实现已经被交换
+ 了。调用 viewDidAppear: 会调用你实现的 swizzled_viewDidAppear:，而在 swizzled_viewDidAppear: 里
+ 调用 swizzled_viewDidAppear: 实际上调用的是原来的 viewDidAppear:
+ 
+ http://tech.glowing.com/cn/method-swizzling-aop
+ */
+- (void)swizzled_viewDidAppear:(BOOL)animated
+{
+    NSLog(@"---- swizzled_viewDidAppear 位置1 ----");
+    
+    // call original implementation
+    [self swizzled_viewDidAppear:animated];
+    
+    NSLog(@"---- swizzled_viewDidAppear 位置2 ----");
+}
+
+/**
+ 要先尝试添加原 selector 是为了做一层保护，因为如果这个类没有实现 originalSelector ，但其父
+ 类实现了，那 class_getInstanceMethod 会返回父类的方法。这样 method_exchangeImplementations 替
+ 换的是父类的那个方法，这当然不是你想要的。所以我们先尝试添加 orginalSelector ，如果已经存在，再
+ 用 method_exchangeImplementations 把原方法的实现跟新的方法实现给交换掉。
+ 
+ http://tech.glowing.com/cn/method-swizzling-aop
+ */
+void swizzleMethod(Class class, SEL originalSelector, SEL swizzledSelector)
+{
+    // the method might not exist in the class, but in its superclass
+    Method originalMethod = class_getInstanceMethod(class, originalSelector);
+    Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
+    
+    // class_addMethod will fail if original method already exists
+    BOOL didAddMethod = class_addMethod(class, originalSelector, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod));
+    
+    // the method doesn’t exist and we just added one
+    if (didAddMethod) {
+        class_replaceMethod(class, swizzledSelector, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
+    }
+    else {
+        method_exchangeImplementations(originalMethod, swizzledMethod);
+    }
+}
+
+
+/**
+ 其实，这里还可以更简化点：直接用新的 IMP 取代原 IMP ，而不是替换。只需要有全局的函数指针指向
+ 原 IMP 就可以。
+ http://tech.glowing.com/cn/method-swizzling-aop
+ */
+//void (gOriginalViewDidAppear)(id, SEL, BOOL);
+//
+//void newViewDidAppear(UIViewController *self, SEL _cmd, BOOL animated)
+//{
+//    // call original implementation
+//    gOriginalViewDidAppear(self, _cmd, animated);
+//    
+//    // Logging
+//    [Logging logWithEventName:NSStringFromClass([self class])];
+//}
+//
+//+ (void)load
+//{
+//    Method originalMethod = class_getInstanceMethod(self, @selector(viewDidAppear:));
+//    gOriginalViewDidAppear = (void *)method_getImplementation(originalMethod);
+//    
+//    if(!class_addMethod(self, @selector(viewDidAppear:), (IMP) newViewDidAppear, method_getTypeEncoding(originalMethod))) {
+//        method_setImplementation(originalMethod, (IMP) newViewDidAppear);
+//    }
+//}
 
 @end

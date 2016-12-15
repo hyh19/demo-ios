@@ -307,6 +307,7 @@
 				CAAA16EA1DF0205600DA98E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
