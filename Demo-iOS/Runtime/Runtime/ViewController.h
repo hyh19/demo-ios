@@ -11,7 +11,3 @@
 @interface ViewController : UIViewController
 
 @end
-
-@interface UIViewController (MethodSwizzling)
-
-@end

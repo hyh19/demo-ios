@@ -9,24 +9,46 @@
 #import "ViewController.h"
 #import <objc/runtime.h>
 
-@interface ViewController ()
+///-----------------------------------------------------------------------------
+/// http://nshipster.com/associated-objects
+///-----------------------------------------------------------------------------
+#pragma mark - Associated Objects -
 
+/**
+ Associated Objects—or Associative References, as they were originally known—are a feature of the Objective-C 2.0 runtime, introduced in OS X Snow Leopard (available in iOS 4). The term refers to the following three C functions declared in <objc/runtime.h>, which allow objects to associate arbitrary values for keys at runtime:
+ 
+ objc_setAssociatedObject
+ objc_getAssociatedObject
+ objc_removeAssociatedObjects
+ Why is this useful? It allows developers to add custom properties to existing classes in categories, which is an otherwise notable shortcoming for Objective-C.
+ 
+ http://nshipster.com/associated-objects
+ */
+@interface NSObject (AssociatedObject)
+@property (nonatomic, strong) id associatedObject;
 @end
 
-@implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+@implementation NSObject (AssociatedObject)
+@dynamic associatedObject;
+
+/**
+ It is often recommended that they key be a static char—or better yet, the
+ pointer to one. Basically, an arbitrary value that is guaranteed to be constant,
+ unique, and scoped for use within getters and setters:
+ 
+ static char kAssociatedObjectKey;
+ 
+ objc_getAssociatedObject(self, &kAssociatedObjectKey);
+ 
+ http://nshipster.com/associated-objects
+ */
+- (void)setAssociatedObject:(id)object {
+    objc_setAssociatedObject(self, @selector(associatedObject), object, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    
-    NSLog(@"---- viewDidAppear 位置1 ----");
-    
-    // 父类的方法被替换了
-    [super viewDidAppear:animated];
-    
-    NSLog(@"---- viewDidAppear 位置1 ----");
+- (id)associatedObject {
+    return objc_getAssociatedObject(self, @selector(associatedObject));
 }
 
 @end
@@ -35,6 +57,11 @@
 /// http://tech.glowing.com/cn/method-swizzling-aop
 ///-----------------------------------------------------------------------------
 #pragma mark - Method Swizzling 和 AOP 实践 -
+@interface UIViewController (MethodSwizzling)
+
+@end
+
+
 @implementation UIViewController (MethodSwizzling)
 
 /**
@@ -104,7 +131,7 @@ void swizzleMethod(Class class, SEL originalSelector, SEL swizzledSelector)
 //{
 //    // call original implementation
 //    gOriginalViewDidAppear(self, _cmd, animated);
-//    
+//
 //    // Logging
 //    [Logging logWithEventName:NSStringFromClass([self class])];
 //}
@@ -113,10 +140,36 @@ void swizzleMethod(Class class, SEL originalSelector, SEL swizzledSelector)
 //{
 //    Method originalMethod = class_getInstanceMethod(self, @selector(viewDidAppear:));
 //    gOriginalViewDidAppear = (void *)method_getImplementation(originalMethod);
-//    
+//
 //    if(!class_addMethod(self, @selector(viewDidAppear:), (IMP) newViewDidAppear, method_getTypeEncoding(originalMethod))) {
 //        method_setImplementation(originalMethod, (IMP) newViewDidAppear);
 //    }
 //}
 
 @end
+
+
+@interface ViewController ()
+
+@end
+
+@implementation ViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.associatedObject = @"Hello, AssociatedObject!";
+    NSLog(@"%@", self.associatedObject);
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    
+    NSLog(@"---- viewDidAppear 位置1 ----");
+    
+    // 父类的方法被替换了
+    [super viewDidAppear:animated];
+    
+    NSLog(@"---- viewDidAppear 位置1 ----");
+}
+
+@end
+
