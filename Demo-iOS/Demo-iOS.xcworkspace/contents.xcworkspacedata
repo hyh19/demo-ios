@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:CoreGraphics/CoreGraphics.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:ResponderChain/ResponderChain.xcodeproj">
    </FileRef>
    <FileRef
