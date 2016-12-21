@@ -10,7 +10,7 @@
 #import <MediaPlayer/MediaPlayer.h>
 
 /**
- 播放视频
+ 播放视频：使用MPMoviePlayerController
  http://www.cnblogs.com/kenshincui/p/4186022.html
  */
 @interface VideoViewControllerOne ()
@@ -41,8 +41,8 @@
 
 
 - (NSURL *)getFileURL {
-    NSString *URLString = [[NSBundle mainBundle] pathForResource:@"video.mp4" ofType:nil];
-    NSURL *URL = [NSURL fileURLWithPath:URLString];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"video.mp4" ofType:nil];
+    NSURL *URL = [NSURL fileURLWithPath:path];
     return URL;
 }
 

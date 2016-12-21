@@ -53,8 +53,8 @@
 
 - (AVAudioPlayer *)audioPlayer {
     if (!_audioPlayer) {
-        NSString *musicFile = [[NSBundle mainBundle]pathForResource:@"music.mp3" ofType:nil];
-        NSURL *fileURL = [NSURL fileURLWithPath:musicFile];
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"music.mp3" ofType:nil];
+        NSURL *fileURL = [NSURL fileURLWithPath:path];
         NSError *error = nil;
         // 初始化播放器，注意这里的URL参数只能是文件路径，不支持HTTP URL
         _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:fileURL error:&error];

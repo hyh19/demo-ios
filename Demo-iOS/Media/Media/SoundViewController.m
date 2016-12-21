@@ -32,9 +32,9 @@ void soundCompleteCallback(SystemSoundID soundID, void *clientData) {
 
 - (void)playSoundEffect:(NSString *)name {
     
-    NSString *audioFile = [[NSBundle mainBundle] pathForResource:name ofType:nil];
+    NSString *path = [[NSBundle mainBundle] pathForResource:name ofType:nil];
     
-    NSURL *fileURL = [NSURL fileURLWithPath:audioFile];
+    NSURL *fileURL = [NSURL fileURLWithPath:path];
     
     SystemSoundID soundID = 0;
     // 此函数会将音效文件加入到系统音频服务中并返回一个长整形ID
