@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		CAF30AE71E0A751A00FB0066 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF30AE61E0A751A00FB0066 /* main.m */; };
 		CAF30AEA1E0A751A00FB0066 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF30AE91E0A751A00FB0066 /* AppDelegate.m */; };
-		CAF30AED1E0A751A00FB0066 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF30AEC1E0A751A00FB0066 /* ViewController.m */; };
+		CAF30AED1E0A751A00FB0066 /* SoundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF30AEC1E0A751A00FB0066 /* SoundViewController.m */; };
 		CAF30AF01E0A751A00FB0066 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAF30AEE1E0A751A00FB0066 /* Main.storyboard */; };
 		CAF30AF21E0A751A00FB0066 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAF30AF11E0A751A00FB0066 /* Assets.xcassets */; };
 		CAF30AF51E0A751A00FB0066 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAF30AF31E0A751A00FB0066 /* LaunchScreen.storyboard */; };
@@ -25,8 +25,8 @@
 		CAF30AE61E0A751A00FB0066 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CAF30AE81E0A751A00FB0066 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CAF30AE91E0A751A00FB0066 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CAF30AEB1E0A751A00FB0066 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		CAF30AEC1E0A751A00FB0066 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		CAF30AEB1E0A751A00FB0066 /* SoundViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoundViewController.h; sourceTree = "<group>"; };
+		CAF30AEC1E0A751A00FB0066 /* SoundViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SoundViewController.m; sourceTree = "<group>"; };
 		CAF30AEF1E0A751A00FB0066 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CAF30AF11E0A751A00FB0066 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CAF30AF41E0A751A00FB0066 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -76,8 +76,8 @@
 				CAF30B051E0A814C00FB0066 /* music.mp3 */,
 				CAF30AE81E0A751A00FB0066 /* AppDelegate.h */,
 				CAF30AE91E0A751A00FB0066 /* AppDelegate.m */,
-				CAF30AEB1E0A751A00FB0066 /* ViewController.h */,
-				CAF30AEC1E0A751A00FB0066 /* ViewController.m */,
+				CAF30AEB1E0A751A00FB0066 /* SoundViewController.h */,
+				CAF30AEC1E0A751A00FB0066 /* SoundViewController.m */,
 				CAF30B071E0A81D900FB0066 /* MusicViewController.h */,
 				CAF30B081E0A81D900FB0066 /* MusicViewController.m */,
 				CAF30AEE1E0A751A00FB0066 /* Main.storyboard */,
@@ -180,7 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAF30B091E0A81D900FB0066 /* MusicViewController.m in Sources */,
-				CAF30AED1E0A751A00FB0066 /* ViewController.m in Sources */,
+				CAF30AED1E0A751A00FB0066 /* SoundViewController.m in Sources */,
 				CAF30AEA1E0A751A00FB0066 /* AppDelegate.m in Sources */,
 				CAF30AE71E0A751A00FB0066 /* main.m in Sources */,
 			);

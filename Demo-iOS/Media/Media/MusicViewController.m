@@ -9,6 +9,10 @@
 #import "MusicViewController.h"
 #import <AVFoundation/AVFoundation.h>
 
+/**
+ 播放音乐文件
+ http://www.cnblogs.com/kenshincui/p/4186022.html
+ */
 @interface MusicViewController () <AVAudioPlayerDelegate>
 
 @property (nonatomic, strong) AVAudioPlayer *audioPlayer;

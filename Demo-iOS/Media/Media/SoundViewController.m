@@ -6,14 +6,18 @@
 //  Copyright © 2016 Yuhui Huang. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "SoundViewController.h"
 #import <AudioToolbox/AudioToolbox.h>
 
-@interface ViewController ()
+/**
+ 播放音效文件
+ http://www.cnblogs.com/kenshincui/p/4186022.html
+ */
+@interface SoundViewController ()
 
 @end
 
-@implementation ViewController
+@implementation SoundViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -21,17 +25,11 @@
     [self playSoundEffect:@"sound.caf"];
 }
 
-/**
- 播放音效完成后的回调函数
- */
+// 播放音效完成后的回调函数
 void soundCompleteCallback(SystemSoundID soundID, void *clientData) {
     NSLog(@"播放完成...");
 }
 
-/**
- 播放音效文件
- http://www.cnblogs.com/kenshincui/p/4186022.html
- */
 - (void)playSoundEffect:(NSString *)name {
     
     NSString *audioFile = [[NSBundle mainBundle] pathForResource:name ofType:nil];
@@ -49,6 +47,5 @@ void soundCompleteCallback(SystemSoundID soundID, void *clientData) {
     // 播放音效并震动
     AudioServicesPlayAlertSound(soundID);
 }
-
 
 @end
