@@ -58,3 +58,8 @@ fastlane/screenshots
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+
+# 多媒体文件 
+*.mp3
+*.caf
+*.mp4
