@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="d2F-Ib-53R">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="upS-SD-WUO">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -143,6 +143,70 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3DM-RT-VUp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Audio Recorder View Controller-->
+        <scene sceneID="669-Du-Ga6">
+            <objects>
+                <viewController id="upS-SD-WUO" customClass="AudioRecorderViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RUM-Z0-R7R"/>
+                        <viewControllerLayoutGuide type="bottom" id="zfJ-Te-grs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xCi-jp-rva">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="INI-dg-zXS">
+                                <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ll-Nq-4gC">
+                                        <rect key="frame" x="0.0" y="0.0" width="94" height="60"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Record"/>
+                                        <connections>
+                                            <action selector="recordClick:" destination="upS-SD-WUO" eventType="touchUpInside" id="7rm-TK-toq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mjD-RA-ofs">
+                                        <rect key="frame" x="94" y="0.0" width="93.5" height="60"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Pause"/>
+                                        <connections>
+                                            <action selector="pauseClick:" destination="upS-SD-WUO" eventType="touchUpInside" id="2aW-Rs-mL5"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DXj-8M-0xx">
+                                        <rect key="frame" x="187.5" y="0.0" width="94" height="60"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Resume"/>
+                                        <connections>
+                                            <action selector="resumeClick:" destination="upS-SD-WUO" eventType="touchUpInside" id="6Aw-3z-a0f"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4Z-bY-pyM">
+                                        <rect key="frame" x="281.5" y="0.0" width="93.5" height="60"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Stop"/>
+                                        <connections>
+                                            <action selector="stopClick:" destination="upS-SD-WUO" eventType="touchUpInside" id="9eZ-0W-Urc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="5XL-Oo-kdV"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="INI-dg-zXS" firstAttribute="leading" secondItem="xCi-jp-rva" secondAttribute="leading" id="WG9-qy-qBb"/>
+                            <constraint firstItem="zfJ-Te-grs" firstAttribute="top" secondItem="INI-dg-zXS" secondAttribute="bottom" id="nc8-ub-jRe"/>
+                            <constraint firstAttribute="trailing" secondItem="INI-dg-zXS" secondAttribute="trailing" id="ptE-0P-Y3r"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m3K-9A-ldD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
