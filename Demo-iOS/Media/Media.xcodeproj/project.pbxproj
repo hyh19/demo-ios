@@ -10,6 +10,7 @@
 		CA0C3D591E0A9C5600398D4F /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CAF30B111E0A9B3600FB0066 /* video.mp4 */; };
 		CA0C3D5E1E0AA43E00398D4F /* VideoViewControllerTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0C3D5D1E0AA43E00398D4F /* VideoViewControllerTwo.m */; };
 		CA0C3D661E0AA9F800398D4F /* VideoViewControllerThree.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0C3D651E0AA9F800398D4F /* VideoViewControllerThree.m */; };
+		CA2DCDDC1E0BD8EF006B72E2 /* AVFCameraRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2DCDDB1E0BD8EF006B72E2 /* AVFCameraRecord.m */; };
 		CAF0AA7C1E0BA14500516CD9 /* AudioRecorderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF0AA7B1E0BA14500516CD9 /* AudioRecorderViewController.m */; };
 		CAF0AA7F1E0BADD700516CD9 /* VideoRecordViewControllerOne.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF0AA7E1E0BADD700516CD9 /* VideoRecordViewControllerOne.m */; };
 		CAF0AA811E0BAECD00516CD9 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAF0AA801E0BAECD00516CD9 /* MobileCoreServices.framework */; };
@@ -35,6 +36,8 @@
 		CA0C3D5D1E0AA43E00398D4F /* VideoViewControllerTwo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoViewControllerTwo.m; sourceTree = "<group>"; };
 		CA0C3D641E0AA9F800398D4F /* VideoViewControllerThree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoViewControllerThree.h; sourceTree = "<group>"; };
 		CA0C3D651E0AA9F800398D4F /* VideoViewControllerThree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoViewControllerThree.m; sourceTree = "<group>"; };
+		CA2DCDDA1E0BD8EF006B72E2 /* AVFCameraRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVFCameraRecord.h; sourceTree = "<group>"; };
+		CA2DCDDB1E0BD8EF006B72E2 /* AVFCameraRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVFCameraRecord.m; sourceTree = "<group>"; };
 		CAF0AA7A1E0BA14500516CD9 /* AudioRecorderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioRecorderViewController.h; sourceTree = "<group>"; };
 		CAF0AA7B1E0BA14500516CD9 /* AudioRecorderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioRecorderViewController.m; sourceTree = "<group>"; };
 		CAF0AA7D1E0BADD700516CD9 /* VideoRecordViewControllerOne.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoRecordViewControllerOne.h; sourceTree = "<group>"; };
@@ -122,6 +125,8 @@
 				CAF0AA7E1E0BADD700516CD9 /* VideoRecordViewControllerOne.m */,
 				CAF0AA821E0BC31A00516CD9 /* TakePhotoViewController.h */,
 				CAF0AA831E0BC31A00516CD9 /* TakePhotoViewController.m */,
+				CA2DCDDA1E0BD8EF006B72E2 /* AVFCameraRecord.h */,
+				CA2DCDDB1E0BD8EF006B72E2 /* AVFCameraRecord.m */,
 				CAF30AEE1E0A751A00FB0066 /* Main.storyboard */,
 				CAF30AF11E0A751A00FB0066 /* Assets.xcassets */,
 				CAF30AF31E0A751A00FB0066 /* LaunchScreen.storyboard */,
@@ -239,6 +244,7 @@
 				CA0C3D661E0AA9F800398D4F /* VideoViewControllerThree.m in Sources */,
 				CAF30AEA1E0A751A00FB0066 /* AppDelegate.m in Sources */,
 				CAF0AA7F1E0BADD700516CD9 /* VideoRecordViewControllerOne.m in Sources */,
+				CA2DCDDC1E0BD8EF006B72E2 /* AVFCameraRecord.m in Sources */,
 				CAF30AE71E0A751A00FB0066 /* main.m in Sources */,
 				CAF0AA7C1E0BA14500516CD9 /* AudioRecorderViewController.m in Sources */,
 			);
