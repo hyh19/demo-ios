@@ -6,19 +6,15 @@
 //  Copyright © 2016 Yuhui Huang. All rights reserved.
 //
 
-//
-//  ViewController.m
-//  AVFoundationCamera
-//
-//  Created by Kenshin Cui on 14/04/05.
-//  Copyright (c) 2014年 cmjstudio. All rights reserved.
-//  视频录制
-
 #import "AVFCameraRecord.h"
 #import <AVFoundation/AVFoundation.h>
 #import <AssetsLibrary/AssetsLibrary.h>
 typedef void(^PropertyChangeBlock)(AVCaptureDevice *captureDevice);
 
+/**
+ 录制视频：使用AVFoundation
+ http://www.cnblogs.com/kenshincui/p/4186022.html
+ */
 @interface AVFCameraRecord ()<AVCaptureFileOutputRecordingDelegate>//视频文件输出代理
 
 @property (strong,nonatomic) AVCaptureSession *captureSession;//负责输入和输出设置之间的数据传递
