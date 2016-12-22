@@ -13,6 +13,8 @@
 		CAF0AA7C1E0BA14500516CD9 /* AudioRecorderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF0AA7B1E0BA14500516CD9 /* AudioRecorderViewController.m */; };
 		CAF0AA7F1E0BADD700516CD9 /* VideoRecordViewControllerOne.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF0AA7E1E0BADD700516CD9 /* VideoRecordViewControllerOne.m */; };
 		CAF0AA811E0BAECD00516CD9 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAF0AA801E0BAECD00516CD9 /* MobileCoreServices.framework */; };
+		CAF0AA841E0BC31A00516CD9 /* TakePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF0AA831E0BC31A00516CD9 /* TakePhotoViewController.m */; };
+		CAF0AA861E0BC36900516CD9 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAF0AA851E0BC36900516CD9 /* AssetsLibrary.framework */; };
 		CAF30AE71E0A751A00FB0066 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF30AE61E0A751A00FB0066 /* main.m */; };
 		CAF30AEA1E0A751A00FB0066 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF30AE91E0A751A00FB0066 /* AppDelegate.m */; };
 		CAF30AED1E0A751A00FB0066 /* SoundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF30AEC1E0A751A00FB0066 /* SoundViewController.m */; };
@@ -38,6 +40,9 @@
 		CAF0AA7D1E0BADD700516CD9 /* VideoRecordViewControllerOne.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoRecordViewControllerOne.h; sourceTree = "<group>"; };
 		CAF0AA7E1E0BADD700516CD9 /* VideoRecordViewControllerOne.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoRecordViewControllerOne.m; sourceTree = "<group>"; };
 		CAF0AA801E0BAECD00516CD9 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		CAF0AA821E0BC31A00516CD9 /* TakePhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakePhotoViewController.h; sourceTree = "<group>"; };
+		CAF0AA831E0BC31A00516CD9 /* TakePhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakePhotoViewController.m; sourceTree = "<group>"; };
+		CAF0AA851E0BC36900516CD9 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		CAF30AE21E0A751A00FB0066 /* Media.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Media.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAF30AE61E0A751A00FB0066 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CAF30AE81E0A751A00FB0066 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -65,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAF0AA861E0BC36900516CD9 /* AssetsLibrary.framework in Frameworks */,
 				CAF0AA811E0BAECD00516CD9 /* MobileCoreServices.framework in Frameworks */,
 				CAF30B101E0A9B1600FB0066 /* MediaPlayer.framework in Frameworks */,
 				CAF30B021E0A761A00FB0066 /* AVFoundation.framework in Frameworks */,
@@ -114,6 +120,8 @@
 				CAF0AA7B1E0BA14500516CD9 /* AudioRecorderViewController.m */,
 				CAF0AA7D1E0BADD700516CD9 /* VideoRecordViewControllerOne.h */,
 				CAF0AA7E1E0BADD700516CD9 /* VideoRecordViewControllerOne.m */,
+				CAF0AA821E0BC31A00516CD9 /* TakePhotoViewController.h */,
+				CAF0AA831E0BC31A00516CD9 /* TakePhotoViewController.m */,
 				CAF30AEE1E0A751A00FB0066 /* Main.storyboard */,
 				CAF30AF11E0A751A00FB0066 /* Assets.xcassets */,
 				CAF30AF31E0A751A00FB0066 /* LaunchScreen.storyboard */,
@@ -134,6 +142,7 @@
 		CAF30AFE1E0A761200FB0066 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CAF0AA851E0BC36900516CD9 /* AssetsLibrary.framework */,
 				CAF0AA801E0BAECD00516CD9 /* MobileCoreServices.framework */,
 				CAF30B0F1E0A9B1600FB0066 /* MediaPlayer.framework */,
 				CAF30B011E0A761A00FB0066 /* AVFoundation.framework */,
@@ -222,6 +231,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAF0AA841E0BC31A00516CD9 /* TakePhotoViewController.m in Sources */,
 				CAF30B0E1E0A9AD900FB0066 /* VideoViewControllerOne.m in Sources */,
 				CAF30B091E0A81D900FB0066 /* MusicViewController.m in Sources */,
 				CAF30AED1E0A751A00FB0066 /* SoundViewController.m in Sources */,
