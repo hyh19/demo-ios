@@ -20,6 +20,8 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>获取摄像头的访问权限</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>获取麦克风的访问权限</string>
 	<key>NSPhotoLibraryUsageDescription</key>
