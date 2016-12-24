@@ -7,8 +7,4 @@
 #define MAS_SHORTHAND_GLOBALS
 #import "Masonry.h"
 
-#import <KSDeferred/KSDeferred.h>
-
-#import <Objection/Objection.h>
-
 #endif /* PrefixHeader_pch */

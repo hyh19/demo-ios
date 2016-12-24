@@ -1,8 +1,0 @@
-GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/BlocksKit" "${PODS_ROOT}/Headers/Public/KSDeferred" "${PODS_ROOT}/Headers/Public/Masonry" "${PODS_ROOT}/Headers/Public/Objection" "${PODS_ROOT}/Headers/Public/ThirdParty"
-LIBRARY_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/BlocksKit" "$PODS_CONFIGURATION_BUILD_DIR/KSDeferred" "$PODS_CONFIGURATION_BUILD_DIR/Masonry" "$PODS_CONFIGURATION_BUILD_DIR/Objection" "$PODS_CONFIGURATION_BUILD_DIR/ThirdParty"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/BlocksKit" -isystem "${PODS_ROOT}/Headers/Public/KSDeferred" -isystem "${PODS_ROOT}/Headers/Public/Masonry" -isystem "${PODS_ROOT}/Headers/Public/Objection" -isystem "${PODS_ROOT}/Headers/Public/ThirdParty"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"BlocksKit" -l"KSDeferred" -l"Masonry" -l"Objection" -l"ThirdParty" -framework "Foundation" -framework "MessageUI" -framework "QuickLook" -framework "UIKit"
-PODS_BUILD_DIR = $BUILD_DIR
-PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
-PODS_ROOT = ${SRCROOT}/../Pods

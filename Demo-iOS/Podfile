@@ -7,13 +7,12 @@ pod 'ThirdParty', :git => 'https://github.com/mrhuangyuhui/repo-third-party-ios.
 # 其他第三方类库
 pod 'Masonry', :git => 'https://github.com/cloudkite/Masonry.git'
 pod 'BlocksKit', :git => 'https://github.com/zwaldowski/BlocksKit.git'
-pod 'KSDeferred', :git => 'https://github.com/kseebaldt/deferred.git'
-pod 'Objection', :git => 'https://github.com/atomicobject/objection.git'
+pod 'YYKit', :git => 'https://github.com/ibireme/YYKit.git'
 
 target "Demo-iOS" do
   project "Demo-iOS/Demo-iOS.xcodeproj"
 end
 
-target "QuartzCode" do
-  project "QuartzCode/QuartzCode.xcodeproj"
+target "YYKitDemo" do
+    project "YYKitDemo/YYKitDemo.xcodeproj"
 end

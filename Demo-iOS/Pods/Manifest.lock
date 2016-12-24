@@ -18,54 +18,48 @@ PODS:
   - BlocksKit/UIKit (2.2.6):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
-  - KSDeferred (0.3.3)
   - Masonry (1.0.2)
-  - Objection (1.6.1)
   - ThirdParty (0.0.1)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
 
 DEPENDENCIES:
   - BlocksKit (from `https://github.com/zwaldowski/BlocksKit.git`)
-  - KSDeferred (from `https://github.com/kseebaldt/deferred.git`)
   - Masonry (from `https://github.com/cloudkite/Masonry.git`)
-  - Objection (from `https://github.com/atomicobject/objection.git`)
   - ThirdParty (from `https://github.com/mrhuangyuhui/repo-third-party-ios.git`)
+  - YYKit (from `https://github.com/ibireme/YYKit.git`)
 
 EXTERNAL SOURCES:
   BlocksKit:
     :git: https://github.com/zwaldowski/BlocksKit.git
-  KSDeferred:
-    :git: https://github.com/kseebaldt/deferred.git
   Masonry:
     :git: https://github.com/cloudkite/Masonry.git
-  Objection:
-    :git: https://github.com/atomicobject/objection.git
   ThirdParty:
     :git: https://github.com/mrhuangyuhui/repo-third-party-ios.git
+  YYKit:
+    :git: https://github.com/ibireme/YYKit.git
 
 CHECKOUT OPTIONS:
   BlocksKit:
     :commit: 52671356f157fd76012bfe734bd99b5da1e8db07
     :git: https://github.com/zwaldowski/BlocksKit.git
-  KSDeferred:
-    :commit: 354766cd816a25fc3d8f5972624aacf47ed865ef
-    :git: https://github.com/kseebaldt/deferred.git
   Masonry:
     :commit: 375d9a5e625b4a39fc056d57154926ec607250c4
     :git: https://github.com/cloudkite/Masonry.git
-  Objection:
-    :commit: 7c281ec8b757c99632e0c69ddf63b18c6f57ce3b
-    :git: https://github.com/atomicobject/objection.git
   ThirdParty:
     :commit: e4c85ddc93756ee10a2c92beed9d13be0ed05bf4
     :git: https://github.com/mrhuangyuhui/repo-third-party-ios.git
+  YYKit:
+    :commit: 3869686e0e560db0b27a7140188fad771e271508
+    :git: https://github.com/ibireme/YYKit.git
 
 SPEC CHECKSUMS:
   BlocksKit: 5fae06c13638d9fdb0bbddca3dabfe8f5aa735c5
-  KSDeferred: 1d90bddfff8b387a49deeb6579e63e170f4f2ce2
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
-  Objection: 3672ec8e149557eb208f27aa433ba9943b6b7f75
   ThirdParty: 514cd6242fa6c7392aa266d46c9b8626aac75cc1
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 7c9b269fdd29b53e2b3f127908f6e31ba4fd3bba
+PODFILE CHECKSUM: 7ae7eb802f5b7d9326e06032652c8eda841f081e
 
 COCOAPODS: 1.0.0
