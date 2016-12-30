@@ -1,4 +1,5 @@
 PODS:
+  - Aspects (1.4.1)
   - BlocksKit (2.2.6):
     - BlocksKit/All (= 2.2.6)
   - BlocksKit/All (2.2.6):
@@ -25,12 +26,15 @@ PODS:
   - YYKit/no-arc (1.0.9)
 
 DEPENDENCIES:
+  - Aspects (from `https://github.com/steipete/Aspects.git`)
   - BlocksKit (from `https://github.com/zwaldowski/BlocksKit.git`)
   - Masonry (from `https://github.com/cloudkite/Masonry.git`)
   - ThirdParty (from `https://github.com/mrhuangyuhui/repo-third-party-ios.git`)
   - YYKit (from `https://github.com/ibireme/YYKit.git`)
 
 EXTERNAL SOURCES:
+  Aspects:
+    :git: https://github.com/steipete/Aspects.git
   BlocksKit:
     :git: https://github.com/zwaldowski/BlocksKit.git
   Masonry:
@@ -41,6 +45,9 @@ EXTERNAL SOURCES:
     :git: https://github.com/ibireme/YYKit.git
 
 CHECKOUT OPTIONS:
+  Aspects:
+    :commit: a80273d2090526202f176db18461f7b6765b8fb1
+    :git: https://github.com/steipete/Aspects.git
   BlocksKit:
     :commit: 52671356f157fd76012bfe734bd99b5da1e8db07
     :git: https://github.com/zwaldowski/BlocksKit.git
@@ -55,11 +62,12 @@ CHECKOUT OPTIONS:
     :git: https://github.com/ibireme/YYKit.git
 
 SPEC CHECKSUMS:
+  Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   BlocksKit: 5fae06c13638d9fdb0bbddca3dabfe8f5aa735c5
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   ThirdParty: 514cd6242fa6c7392aa266d46c9b8626aac75cc1
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 7ae7eb802f5b7d9326e06032652c8eda841f081e
+PODFILE CHECKSUM: ce185d0aeb305e334c917a81b5dda6f49170e644
 
 COCOAPODS: 1.0.0

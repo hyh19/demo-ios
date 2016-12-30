@@ -8,6 +8,7 @@ pod 'ThirdParty', :git => 'https://github.com/mrhuangyuhui/repo-third-party-ios.
 pod 'Masonry', :git => 'https://github.com/cloudkite/Masonry.git'
 pod 'BlocksKit', :git => 'https://github.com/zwaldowski/BlocksKit.git'
 pod 'YYKit', :git => 'https://github.com/ibireme/YYKit.git'
+pod 'Aspects', :git => 'https://github.com/steipete/Aspects.git'
 
 target "Demo-iOS" do
   project "Demo-iOS/Demo-iOS.xcodeproj"

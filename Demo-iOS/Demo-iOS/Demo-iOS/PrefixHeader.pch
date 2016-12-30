@@ -7,4 +7,6 @@
 #define MAS_SHORTHAND_GLOBALS
 #import "Masonry.h"
 
+#import "Aspects.h"
+
 #endif /* PrefixHeader_pch */

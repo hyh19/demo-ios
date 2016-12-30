@@ -13,6 +13,7 @@
 		CA3229361DA0F0C4008D0E05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA3229341DA0F0C4008D0E05 /* Main.storyboard */; };
 		CA3229381DA0F0C4008D0E05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA3229371DA0F0C4008D0E05 /* Assets.xcassets */; };
 		CA32293B1DA0F0C4008D0E05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA3229391DA0F0C4008D0E05 /* LaunchScreen.storyboard */; };
+		CA6CCAF31E161A1E00AB58ED /* AspectsDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6CCAF21E161A1E00AB58ED /* AspectsDemo.m */; };
 		CAF30AD81E0A3CB600FB0066 /* MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF30AD71E0A3CB600FB0066 /* MyView.m */; };
 		F216B4B2908A6D992ADE7AA3 /* libPods-Demo-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 28B7EB6717FC229B65549F13 /* libPods-Demo-iOS.a */; };
 /* End PBXBuildFile section */
@@ -31,6 +32,8 @@
 		CA32293A1DA0F0C4008D0E05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA32293C1DA0F0C4008D0E05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA3229651DA0F8BB008D0E05 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		CA6CCAF11E161A1E00AB58ED /* AspectsDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AspectsDemo.h; sourceTree = "<group>"; };
+		CA6CCAF21E161A1E00AB58ED /* AspectsDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AspectsDemo.m; sourceTree = "<group>"; };
 		CAF30AD61E0A3CB600FB0066 /* MyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyView.h; sourceTree = "<group>"; };
 		CAF30AD71E0A3CB600FB0066 /* MyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyView.m; sourceTree = "<group>"; };
 		EE1D7E4065DBFD4471D32F7E /* Pods-Demo-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo-iOS.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Demo-iOS/Pods-Demo-iOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -87,6 +90,8 @@
 				CA3229391DA0F0C4008D0E05 /* LaunchScreen.storyboard */,
 				CA32293C1DA0F0C4008D0E05 /* Info.plist */,
 				CA32292B1DA0F0C4008D0E05 /* Supporting Files */,
+				CA6CCAF11E161A1E00AB58ED /* AspectsDemo.h */,
+				CA6CCAF21E161A1E00AB58ED /* AspectsDemo.m */,
 			);
 			path = "Demo-iOS";
 			sourceTree = "<group>";
@@ -290,6 +295,7 @@
 			files = (
 				CAF30AD81E0A3CB600FB0066 /* MyView.m in Sources */,
 				CA3229331DA0F0C4008D0E05 /* ViewController.m in Sources */,
+				CA6CCAF31E161A1E00AB58ED /* AspectsDemo.m in Sources */,
 				CA3229301DA0F0C4008D0E05 /* AppDelegate.m in Sources */,
 				CA32292D1DA0F0C4008D0E05 /* main.m in Sources */,
 			);
